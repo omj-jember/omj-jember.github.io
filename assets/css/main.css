@@ -12499,7 +12499,8 @@ fieldset:disabled .btn {
 }
 
 #gallery,
-nav.navbar {
+nav.navbar,
+footer.page-footer {
   background: #ebfbfb;
 }
 
