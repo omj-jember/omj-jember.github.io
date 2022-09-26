@@ -205,7 +205,7 @@
       // pesan
       const msg = 'Dari : *' + nama + '*\nPerihal : *' + subjek + '*\n\n' + pesan + '\n\n *NB: Pesan ini dikirim melalui website https://omj-jember.github.io*'
 
-      window.location.href = 'https://api.whatsapp.com/send?phone=6282139003536&text=' + encodeURI(msg)
+      window.location.href = 'https://api.whatsapp.com/send?phone=6282139003536&text=' + encodeURI(msg.trim())
 
     })
 
