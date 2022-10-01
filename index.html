@@ -78,12 +78,25 @@
           <div class="col-12 col-lg d-flex align-items-center">
             <div>
               <h1 class="fw-bold text-center text-lg-start">Apa itu OMJ?</h1>
-              <p class="text-secondary text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores unde, ea iure saepe veritatis
-                praesentium velit. Numquam molestias repellendus id vitae et, ratione nobis pariatur, a temporibus, vel
-                doloribus voluptatum! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum magni, consectetur
-                atque sint distinctio maxime provid
-              </p>
+              <div class="text-secondary text-justify">
+                <p>
+                  OMJ (Organisasi Mahasiswa Jember) merupakan sebuah oraganisasi yang dibentuk dengan landasan
+                  kekeluargaan oleh perkumpulan mahasiswa dari kabupaten jember yang bernaung dalam kampus Universitas
+                  Islam Negeri Maulana Malik Ibrahim Malang. Organisasi ini bertujuan untuk mengumpulkan para mahasiswa
+                  UIN Malang asal Jember sehingga bisa menjalin hubungan silaturrahim. Selain itu, organisasi ini juga
+                  bertujuan untuk mendukung mahasiswa agar lebih menunjukkan bakat dan minatnya serta mengenal-luaskan
+                  budaya Jember sendiri pada kota-kota lain.
+                </p>
+                <p>
+                  Kegiatan yang biasa dilakukan oleh organisasi ini cukup beragam, mulai dari pengenalan budaya dalam
+                  Forum Orda Bersama (FOB) UIN Maulana Malik Ibrahim Malang, diskusi, bukber, berbagi, dan
+                  kegiatan-kegiatan positif lainnya. Selain, itu OMJ juga punya program unggulan, yaitu `Pengabdian
+                  Masyarakat` yang biasa diadakan setiap tahunnya. Kegiatan ini biasanya diadakan selama 7 hari ketika
+                  memasuki liburan semester di desa atau tempat terpencil di daerah Jember. Program ini bertujuan untuk
+                  mengembangkan desa-desa yang ada di Jember serta melatih anggota untuk langsung terjun ke lapangan
+                  sebagai bekal pada saat KKM nanti.
+                </p>
+              </div>
             </div>
           </div>
           <div class="col-12 col-lg">
@@ -194,7 +207,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
 
-    document.querySelector('#contact form').addEventListener('submit', (e) => {
+    document.querySelector('#contact form').addEventListener('submit', e => {
 
       e.preventDefault()
 
@@ -203,10 +216,13 @@
       const subjek = document.querySelector('input#subjek').value
       const pesan = document.querySelector('textarea#pesan').value
 
-      // pesan
-      const msg = 'Dari : *' + nama + '*\nPerihal : *' + subjek + '*\n\n' + pesan + '\n\n *NB: Pesan ini dikirim melalui website https://omj-jember.github.io*'
+      // isi pesan
+      const msg = 'Dari : *' + nama + '*\nPerihal : *' + subjek + '*\n\n' + pesan + '\n\n *NB: Pesan ini dikirim melalui website ' + window.location.href + '*'
 
-      window.location.href = 'https://api.whatsapp.com/send?phone=6282139003536&text=' + encodeURI(msg.trim())
+      // nomer wa
+      const nomer_wa = '6282139003536'
+
+      window.location.href = 'https://api.whatsapp.com/send?phone=' + nomer_wa + '&text=' + encodeURI(msg.trim())
 
     })
 
